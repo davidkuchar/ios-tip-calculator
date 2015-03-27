@@ -18,12 +18,39 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
+        
         tipLabel.text = String(format: "$%.2f", 0)
         totalLabel.text = String(format: "$%.2f", 0)
         
+//        println("view did load")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         var defaults = NSUserDefaults.standardUserDefaults()
         tipControl.selectedSegmentIndex = defaults.integerForKey("defaultTipPercentageIndex")
+        
+        updateTotal()
+        
+//        println("view will appear")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+//        println("view did appear")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+//        println("view will disappear")
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+//        println("view did disappear")
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +62,14 @@ class ViewController: UIViewController {
     @IBAction func onEditingChanged(sender: AnyObject) {
 //        println("User editing bill" + billField.text)
         
+        updateTotal()
+    }
+    
+    @IBAction func onTap(sender: AnyObject) {
+        view.endEditing(true)
+    }
+    
+    func updateTotal() {
         var tipPercentages = [0.15, 0.2, 0.25]
         var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
@@ -42,14 +77,10 @@ class ViewController: UIViewController {
         var tip = billAmount * tipPercentage
         var total = billAmount + tip
         
-//        tipLabel.text = "$\(tip)"
-//        totalLabel.text = "$\(total)"
+        //        tipLabel.text = "$\(tip)"
+        //        totalLabel.text = "$\(total)"
         
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
-    }
-    
-    @IBAction func onTap(sender: AnyObject) {
-        view.endEditing(true)
     }
 }
