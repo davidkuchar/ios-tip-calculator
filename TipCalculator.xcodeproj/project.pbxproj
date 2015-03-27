@@ -13,6 +13,7 @@
 		5567180F1AC0A4E7002FDD4A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5567180E1AC0A4E7002FDD4A /* Images.xcassets */; };
 		556718121AC0A4E7002FDD4A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556718101AC0A4E7002FDD4A /* LaunchScreen.xib */; };
 		5567181E1AC0A4E7002FDD4A /* TipCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5567181D1AC0A4E7002FDD4A /* TipCalculatorTests.swift */; };
+		556718291AC5141B002FDD4A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556718281AC5141B002FDD4A /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		556718171AC0A4E7002FDD4A /* TipCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5567181C1AC0A4E7002FDD4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5567181D1AC0A4E7002FDD4A /* TipCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculatorTests.swift; sourceTree = "<group>"; };
+		556718281AC5141B002FDD4A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		556718041AC0A4E7002FDD4A /* TipCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				556718271AC51360002FDD4A /* ViewControllers */,
 				556718071AC0A4E7002FDD4A /* AppDelegate.swift */,
 				556718091AC0A4E7002FDD4A /* ViewController.swift */,
 				5567180B1AC0A4E7002FDD4A /* Main.storyboard */,
@@ -110,6 +113,14 @@
 				5567181C1AC0A4E7002FDD4A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		556718271AC51360002FDD4A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				556718281AC5141B002FDD4A /* SettingsViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +225,7 @@
 			files = (
 				5567180A1AC0A4E7002FDD4A /* ViewController.swift in Sources */,
 				556718081AC0A4E7002FDD4A /* AppDelegate.swift in Sources */,
+				556718291AC5141B002FDD4A /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
