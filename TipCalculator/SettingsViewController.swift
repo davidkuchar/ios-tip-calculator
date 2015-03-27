@@ -2,7 +2,7 @@
 //  SettingsViewController.swift
 //  TipCalculator
 //
-//  Created by David Kuchar on 3/26/15.
+//  Created by David Kuchar on 3/27/15.
 //  Copyright (c) 2015 David Kuchar. All rights reserved.
 //
 
@@ -32,7 +32,13 @@ class SettingsViewController: UIViewController {
     }
     */
 
-    @IBAction func tapBack(sender: AnyObject) {
+    @IBAction func tapCancel(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
+        println("cancel")
+    }
+    
+    @IBAction func tapDone(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+        println("done")
     }
 }

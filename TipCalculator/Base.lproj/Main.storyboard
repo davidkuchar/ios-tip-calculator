@@ -123,13 +123,23 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vb8-9A-w4D">
-                                        <rect key="frame" x="11" y="4" width="35" height="30"/>
+                                        <rect key="frame" x="5" y="4" width="48" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Back">
+                                        <state key="normal" title="Cancel">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="tapBack:" destination="xDB-9c-TE0" eventType="touchUpInside" id="nnB-pH-RNi"/>
+                                            <action selector="tapCancel:" destination="xDB-9c-TE0" eventType="touchUpInside" id="Hyn-9a-ohU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AKq-cT-DBc">
+                                        <rect key="frame" x="239" y="4" width="37" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapDone:" destination="xDB-9c-TE0" eventType="touchUpInside" id="e1g-Bi-pnb"/>
                                         </connections>
                                     </button>
                                 </subviews>
