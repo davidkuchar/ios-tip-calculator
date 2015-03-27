@@ -32,4 +32,7 @@ class SettingsViewController: UIViewController {
     }
     */
 
+    @IBAction func tapBack(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }
