@@ -19,8 +19,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        tipLabel.text = "$0.00"
-        totalLabel.text = "$0.00"
+        tipLabel.text = String(format: "$%.2f", 0)
+        totalLabel.text = String(format: "$%.2f", 0)
+        
+        var defaults = NSUserDefaults.standardUserDefaults()
+        tipControl.selectedSegmentIndex = defaults.integerForKey("defaultTipPercentageIndex")
     }
 
     override func didReceiveMemoryWarning() {

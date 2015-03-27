@@ -10,14 +10,19 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var defaultTipPercentage: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        var defaults = NSUserDefaults.standardUserDefaults()
+        defaultTipPercentage.selectedSegmentIndex = defaults.integerForKey("defaultTipPercentageIndex")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
         // Dispose of any resources that can be recreated.
     }
     
@@ -40,5 +45,9 @@ class SettingsViewController: UIViewController {
     @IBAction func tapDone(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
         println("done")
+        
+        var defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(defaultTipPercentage.selectedSegmentIndex, forKey: "defaultTipPercentageIndex")
+        defaults.synchronize()
     }
 }
