@@ -39,15 +39,17 @@ class SettingsViewController: UIViewController {
 
     @IBAction func tapCancel(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
-        println("cancel")
+//        println("cancel")
     }
     
     @IBAction func tapDone(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
-        println("done")
         
         var defaults = NSUserDefaults.standardUserDefaults()
         defaults.setInteger(defaultTipPercentage.selectedSegmentIndex, forKey: "defaultTipPercentageIndex")
+        defaults.setBool(true, forKey: "settingsUpdated")
         defaults.synchronize()
+        
+//        println("done")
     }
 }

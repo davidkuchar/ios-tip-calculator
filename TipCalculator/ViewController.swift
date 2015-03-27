@@ -23,6 +23,15 @@ class ViewController: UIViewController {
         
         tipLabel.text = String(format: "$%.2f", 0)
         totalLabel.text = String(format: "$%.2f", 0)
+//        
+//        // Optionally initialize the property to a desired starting value
+//        self.firstView.alpha = 0
+//        self.secondView.alpha = 1
+//        UIView.animateWithDuration(0.4, animations: {
+//            // This causes first view to fade in and second view to fade out
+//            self.firstView.alpha = 1
+//            self.secondView.alpha = 0
+//        })
         
 //        println("view did load")
     }
@@ -31,9 +40,11 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         
         var defaults = NSUserDefaults.standardUserDefaults()
-        tipControl.selectedSegmentIndex = defaults.integerForKey("defaultTipPercentageIndex")
-        
-        updateTotal()
+        if defaults.boolForKey("settingsUpdated") {
+            tipControl.selectedSegmentIndex = defaults.integerForKey("defaultTipPercentageIndex")
+            defaults.setBool(false, forKey: "settingsUpdated")
+            updateTotal()
+        }
         
 //        println("view will appear")
     }
