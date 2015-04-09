@@ -15,6 +15,7 @@
 
 //3. Add a light/dark color theme to the settings view. In viewWillAppear, update views with the correct theme colors.
 
+//4. Improve design
 
 import UIKit
 
@@ -32,15 +33,27 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         var defaults = NSUserDefaults.standardUserDefaults()
+        
+        // load default tip percentage from settings
         tipControl.selectedSegmentIndex = defaults.integerForKey("defaultTipPercentageIndex")
-        let billAmount = defaults.doubleForKey("billAmount")
-
-        if billAmount > 0 {
-            billField.text = billAmount.description
-            updateTotal()
-        } else {
-            tipLabel.text = String(format: "$%.2f", 0)
-            totalLabel.text = String(format: "$%.2f", 0)
+       
+        // load timestamp from last time bill amount was changed
+        
+        if let billAmount = defaults.objectForKey("billAmount") as? [String:AnyObject] {
+            
+            let timeSinceLastChanged = NSDate().timeIntervalSinceDate(billAmount["timestamp"] as! NSDate)
+            
+            println(String(format: "Time Since Last Changed: %.0f seconds", timeSinceLastChanged))
+            
+            println(String(format: "Stored Bill Amount: $%.2f", billAmount["value"] as! Double))
+            
+            if timeSinceLastChanged < 600 {
+                billField.text = (billAmount["value"] as! Double).description
+                updateTotal()
+            } else {
+                tipLabel.text = String(format: "$%.2f", 0)
+                totalLabel.text = String(format: "$%.2f", 0)
+            }
         }
         
 //        // Optionally initialize the property to a desired starting value
@@ -90,13 +103,18 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
     @IBAction func onEditingChanged(sender: AnyObject) {
 //        println("User editing bill" + billField.text)
         
         var defaults = NSUserDefaults.standardUserDefaults()
-        var billAmount = (billField.text as NSString).doubleValue
-        defaults.setDouble(billAmount, forKey: "billAmount")
+        
+        // store current bill amount with a timestamp
+        let billAmount:[String:AnyObject] = [
+            "value": (billField.text as NSString).doubleValue,
+            "timestamp": NSDate()
+        ]
+        defaults.setObject(billAmount, forKey: "billAmount")
+        
         defaults.synchronize()
         
         updateTotal()
