@@ -34,9 +34,15 @@ class ViewController: UIViewController {
         
         var defaults = NSUserDefaults.standardUserDefaults()
         
+        // start tip and total at zero
+        
+        tipLabel.text = String(format: "$%.2f", 0)
+        totalLabel.text = String(format: "$%.2f", 0)
+        
         // load default tip percentage from settings
+        
         tipControl.selectedSegmentIndex = defaults.integerForKey("defaultTipPercentageIndex")
-       
+        
         // load timestamp from last time bill amount was changed
         
         if let billAmount = defaults.objectForKey("billAmount") as? [String:AnyObject] {
@@ -45,14 +51,14 @@ class ViewController: UIViewController {
             
             println(String(format: "Time Since Last Changed: %.0f seconds", timeSinceLastChanged))
             
-            println(String(format: "Stored Bill Amount: $%.2f", billAmount["value"] as! Double))
+            // only load stored bill amounts that are younger than ten minutes old
             
             if timeSinceLastChanged < 600 {
                 billField.text = (billAmount["value"] as! Double).description
+                
+                println(String(format: "Stored Bill Amount: $%.2f", billAmount["value"] as! Double))
+                
                 updateTotal()
-            } else {
-                tipLabel.text = String(format: "$%.2f", 0)
-                totalLabel.text = String(format: "$%.2f", 0)
             }
         }
         
