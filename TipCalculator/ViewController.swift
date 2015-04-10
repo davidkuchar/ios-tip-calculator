@@ -34,11 +34,6 @@ class ViewController: UIViewController {
         
         var defaults = NSUserDefaults.standardUserDefaults()
         
-        // start tip and total at zero
-        
-        tipLabel.text = String(format: "$%.2f", 0)
-        totalLabel.text = String(format: "$%.2f", 0)
-        
         // load default tip percentage from settings
         
         tipControl.selectedSegmentIndex = defaults.integerForKey("defaultTipPercentageIndex")
@@ -57,10 +52,10 @@ class ViewController: UIViewController {
                 billField.text = (billAmount["value"] as! Double).description
                 
                 println(String(format: "Stored Bill Amount: $%.2f", billAmount["value"] as! Double))
-                
-                updateTotal()
             }
         }
+        
+        updateTotal()
         
 //        // Optionally initialize the property to a desired starting value
 //        self.firstView.alpha = 0
@@ -138,10 +133,13 @@ class ViewController: UIViewController {
         var tip = billAmount * tipPercentage
         var total = billAmount + tip
         
-        //        tipLabel.text = "$\(tip)"
-        //        totalLabel.text = "$\(total)"
+        var formatter = NSNumberFormatter()
+        formatter.numberStyle = .CurrencyStyle
+        formatter.locale = NSLocale.currentLocale()
+//        formatter.locale = NSLocale(localeIdentifier: "es_CL")
+//        formatter.locale = NSLocale(localeIdentifier: "es_ES")
         
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
+        tipLabel.text = formatter.stringFromNumber(tip)
+        totalLabel.text = formatter.stringFromNumber(total)
     }
 }

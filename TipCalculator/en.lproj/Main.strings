@@ -1,0 +1,51 @@
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "1Oo-gP-vwa"; */
+"1Oo-gP-vwa.text" = "Settings";
+
+/* Class = "UISegmentedControl"; 4rk-XE-1M6.segmentTitles[0] = "15%"; ObjectID = "4rk-XE-1M6"; */
+"4rk-XE-1M6.segmentTitles[0]" = "15%";
+
+/* Class = "UISegmentedControl"; 4rk-XE-1M6.segmentTitles[1] = "20%"; ObjectID = "4rk-XE-1M6"; */
+"4rk-XE-1M6.segmentTitles[1]" = "20%";
+
+/* Class = "UISegmentedControl"; 4rk-XE-1M6.segmentTitles[2] = "25%"; ObjectID = "4rk-XE-1M6"; */
+"4rk-XE-1M6.segmentTitles[2]" = "25%";
+
+/* Class = "UISegmentedControl"; 5ul-Ln-uOe.segmentTitles[0] = "15%"; ObjectID = "5ul-Ln-uOe"; */
+"5ul-Ln-uOe.segmentTitles[0]" = "15%";
+
+/* Class = "UISegmentedControl"; 5ul-Ln-uOe.segmentTitles[1] = "20%"; ObjectID = "5ul-Ln-uOe"; */
+"5ul-Ln-uOe.segmentTitles[1]" = "20%";
+
+/* Class = "UISegmentedControl"; 5ul-Ln-uOe.segmentTitles[2] = "25%"; ObjectID = "5ul-Ln-uOe"; */
+"5ul-Ln-uOe.segmentTitles[2]" = "25%";
+
+/* Class = "UIBarButtonItem"; title = "Settings"; ObjectID = "8sx-X8-2yf"; */
+"8sx-X8-2yf.title" = "Settings";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "AKq-cT-DBc"; */
+"AKq-cT-DBc.normalTitle" = "Done";
+
+/* Class = "UINavigationItem"; title = "Tip Calculator"; ObjectID = "EpD-rD-K37"; */
+"EpD-rD-K37.title" = "Tip Calculator";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "Ove-PI-Bdo"; */
+"Ove-PI-Bdo.text" = "Total";
+
+/* Class = "UILabel"; text = "Default Tip Percentage"; ObjectID = "Q4j-I9-7kW"; */
+"Q4j-I9-7kW.text" = "Default Tip Percentage";
+
+/* Class = "UILabel"; text = "$100.00"; ObjectID = "m2e-f1-L81"; */
+"m2e-f1-L81.text" = "$100.00";
+
+/* Class = "UILabel"; text = "Tip"; ObjectID = "qpD-jY-cvU"; */
+"qpD-jY-cvU.text" = "Tip";
+
+/* Class = "UILabel"; text = "Bill Amount"; ObjectID = "trP-ED-lyz"; */
+"trP-ED-lyz.text" = "Bill Amount";
+
+/* Class = "UILabel"; text = "$10.00"; ObjectID = "u9L-pS-lPk"; */
+"u9L-pS-lPk.text" = "$10.00";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "vb8-9A-w4D"; */
+"vb8-9A-w4D.normalTitle" = "Cancel";
