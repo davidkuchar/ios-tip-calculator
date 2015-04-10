@@ -45,10 +45,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="97Z-Iu-Wfr">
-                                <rect key="frame" x="16" y="234" width="288" height="12"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gr0-ch-uTC">
                                 <rect key="frame" x="148" y="109" width="156" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -58,7 +54,7 @@
                                 </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5ul-Ln-uOe">
-                                <rect key="frame" x="16" y="338" width="288" height="29"/>
+                                <rect key="frame" x="16" y="227" width="288" height="29"/>
                                 <segments>
                                     <segment title="15%"/>
                                     <segment title="20%"/>
@@ -78,7 +74,7 @@
                     <navigationItem key="navigationItem" title="Tip Calculator" id="EpD-rD-K37">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="8sx-X8-2yf">
                             <connections>
-                                <segue destination="xDB-9c-TE0" kind="modal" identifier="firstSegue" modalPresentationStyle="currentContext" modalTransitionStyle="coverVertical" id="PEQ-5N-dJ5"/>
+                                <segue destination="DE3-OI-aa2" kind="push" id="THz-Eb-CZO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -155,19 +151,53 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="TdD-qw-PXA">
+                                        <rect key="frame" x="83" y="276" width="118" height="31"/>
+                                    </slider>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J84-Wg-5DK">
+                                        <rect key="frame" x="134" y="354" width="51" height="31"/>
+                                    </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="npU-Rb-GPy"/>
                     <connections>
                         <outlet property="defaultTipPercentage" destination="4rk-XE-1M6" id="KAz-kW-jOJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bfs-pd-Sn0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="634" y="337"/>
+            <point key="canvasLocation" x="961" y="278"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Ew2-sg-paW">
+            <objects>
+                <tableViewController id="DE3-OI-aa2" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ua1-Si-Oae">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Q0Q-3I-ctZ">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q0Q-3I-ctZ" id="yb5-IM-Xtm">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DE3-OI-aa2" id="lC7-8f-o3c"/>
+                            <outlet property="delegate" destination="DE3-OI-aa2" id="rq2-5r-pZ5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="3Bk-QS-vNm"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fxa-bw-MKQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="337"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HbA-49-F6k">
@@ -180,7 +210,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pMV-SF-ewg"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="HBi-Yw-jpA"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v8N-r0-ePH" userLabel="First Responder" sceneMemberID="firstResponder"/>
