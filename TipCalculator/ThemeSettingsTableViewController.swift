@@ -1,5 +1,5 @@
 //
-//  SettingsTableViewController.swift
+//  ThemeSettingsTableViewController.swift
 //  TipCalculator
 //
 //  Created by David Kuchar on 4/10/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController {
+class ThemeSettingsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,10 +18,6 @@ class SettingsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        
-        var defaults = NSUserDefaults.standardUserDefaults()
-//        defaultTipPercentage.selectedSegmentIndex = defaults.integerForKey("defaultTipPercentageIndex")
     }
 
     override func didReceiveMemoryWarning() {
