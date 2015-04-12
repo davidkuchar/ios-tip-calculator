@@ -54,6 +54,7 @@ class DataManager {
         // set up tip percentages
         if let tipInfo = userDefaults.valueForKey("tips") as? [Int:Bool] {
             tips = tipInfo
+            println("defaults!!")
         } else {
             // add default data
             
@@ -86,7 +87,24 @@ class DataManager {
     
     func saveData() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.setValue(tips, forKey: "tips")
         userDefaults.setValue(themes, forKey: "themes")
+    }
+    
+    func isTipSelected(tipValue: Int) -> Bool {
+        if let selected = tips[tipValue] as Bool? {
+            return selected
+        } else {
+            return false
+        }
+    }
+    
+    func selectTip(selectedTipValue: Int) {
+        for tipValue in tips.keys {
+            tips[tipValue] = tipValue == selectedTipValue
+        }
+        
+        saveData()
     }
     
     func isThemeSelected(themeName: String) -> Bool {
@@ -104,33 +122,4 @@ class DataManager {
         
         saveData()
     }
-    
-//    func addRace(species inSpecies: String, race: String) {
-//        if var races = species[inSpecies] {
-//            races.append(race)
-//            species[inSpecies] = races
-//        }
-//        
-//        saveData()
-//    }
-//    
-//    func removeRace(species inSpecies: String, race inRace: String) {
-//        if var races = species[inSpecies] {
-//            var index = -1
-//            
-//            for (idx, race) in enumerate(races) {
-//                if race == inRace {
-//                    index = idx
-//                    break
-//                }
-//            }
-//            
-//            if index != -1 {
-//                races.removeAtIndex(index)
-//                species[inSpecies] = races
-//                saveData()
-//            }
-//            
-//        }
-//    }
 }
