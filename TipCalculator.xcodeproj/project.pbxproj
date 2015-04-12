@@ -12,6 +12,7 @@
 		552BBC731AD75CAE00E32355 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 552BBC751AD75CAE00E32355 /* InfoPlist.strings */; };
 		552BBC771AD8980200E32355 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BBC761AD8980200E32355 /* SettingsTableViewController.swift */; };
 		552BBC791AD8A33700E32355 /* ThemeSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BBC781AD8A33700E32355 /* ThemeSettingsTableViewController.swift */; };
+		552BBC7B1ADA021100E32355 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BBC7A1ADA021100E32355 /* DataManager.swift */; };
 		556718081AC0A4E7002FDD4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556718071AC0A4E7002FDD4A /* AppDelegate.swift */; };
 		5567180A1AC0A4E7002FDD4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556718091AC0A4E7002FDD4A /* ViewController.swift */; };
 		5567180D1AC0A4E7002FDD4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5567180B1AC0A4E7002FDD4A /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		552BBC741AD75CAE00E32355 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		552BBC761AD8980200E32355 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		552BBC781AD8A33700E32355 /* ThemeSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSettingsTableViewController.swift; sourceTree = "<group>"; };
+		552BBC7A1ADA021100E32355 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		556718021AC0A4E7002FDD4A /* TipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		556718061AC0A4E7002FDD4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		556718071AC0A4E7002FDD4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				5567180E1AC0A4E7002FDD4A /* Images.xcassets */,
 				556718101AC0A4E7002FDD4A /* LaunchScreen.xib */,
 				556718051AC0A4E7002FDD4A /* Supporting Files */,
+				552BBC7A1ADA021100E32355 /* DataManager.swift */,
 			);
 			path = TipCalculator;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				552BBC771AD8980200E32355 /* SettingsTableViewController.swift in Sources */,
+				552BBC7B1ADA021100E32355 /* DataManager.swift in Sources */,
 				5567180A1AC0A4E7002FDD4A /* ViewController.swift in Sources */,
 				556718081AC0A4E7002FDD4A /* AppDelegate.swift in Sources */,
 				552BBC791AD8A33700E32355 /* ThemeSettingsTableViewController.swift in Sources */,

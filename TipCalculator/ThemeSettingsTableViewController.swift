@@ -10,6 +10,9 @@ import UIKit
 
 class ThemeSettingsTableViewController: UITableViewController {
 
+    var themes: [String] = ["Light", "Dark"]
+    var selectedTheme = "Light"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +21,11 @@ class ThemeSettingsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        var defaults = NSUserDefaults.standardUserDefaults()
+        if var theme = defaults.stringForKey("theme") {
+            println(theme)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,27 +35,36 @@ class ThemeSettingsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Potentially incomplete method implementation.
-//        // Return the number of sections.
-//        return 0
-//    }
-//
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete method implementation.
-//        // Return the number of rows in the section.
-//        return 0
-//    }
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Potentially incomplete method implementation.
+        // Return the number of sections.
+        return 1
+    }
 
-    /*
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete method implementation.
+        // Return the number of rows in the section.
+        return self.themes.count
+    }
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("themeCell", forIndexPath: indexPath) as! UITableViewCell
 
-        // Configure the cell...
+        cell.textLabel?.text = self.themes[indexPath.row]
+        cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+//        
+//        if (data == self.checkedData) {
+//            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//        } else {
+//            cell.accessoryType = UITableViewCellAccessoryNone;
+//        }
 
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println("You selected cell #\(indexPath.row)!")
+    }
 
     /*
     // Override to support conditional editing of the table view.
