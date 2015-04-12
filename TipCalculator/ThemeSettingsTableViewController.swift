@@ -10,9 +10,8 @@ import UIKit
 
 class ThemeSettingsTableViewController: UITableViewController {
 
-    var themes: [String] = ["Light", "Dark"]
-    var selectedTheme = "Light"
-
+    var themes: [String] = DataManager.sharedInstance.themeList
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,11 +20,6 @@ class ThemeSettingsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        var defaults = NSUserDefaults.standardUserDefaults()
-        if var theme = defaults.stringForKey("theme") {
-            println(theme)
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,20 +44,27 @@ class ThemeSettingsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("themeCell", forIndexPath: indexPath) as! UITableViewCell
 
-        cell.textLabel?.text = self.themes[indexPath.row]
-        cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-//        
-//        if (data == self.checkedData) {
-//            cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//        } else {
-//            cell.accessoryType = UITableViewCellAccessoryNone;
-//        }
+        var themeName = self.themes[indexPath.row]
+        
+        cell.textLabel?.text = themeName
+        
+        if DataManager.sharedInstance.isThemeSelected(themeName) {
+            cell.accessoryType = .Checkmark
+        } else {
+            cell.accessoryType = .None
+        }
 
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("You selected cell #\(indexPath.row)!")
+        var themeName = self.themes[indexPath.row]
+        
+        println("You selected cell #\(themeName)!")
+
+        DataManager.sharedInstance.selectTheme(themeName)
+        
+        self.tableView.reloadData()
     }
 
     /*

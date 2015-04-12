@@ -22,36 +22,87 @@ class DataManager {
         return Static.instance!
     }
     
-//    var species: [String:[String]]
-//    
-//    var speciesList: [String] {
-//        var list: [String] = []
-//        for speciesName in species.keys {
-//            list.append(speciesName)
-//        }
-//        
-//        list.sort(<)
-//        
-//        return list
-//    }
+    var themes: [String:Bool]
+    
+    var themeList: [String] {
+        var list: [String] = []
+        for themeName in themes.keys {
+            list.append(themeName)
+        }
+        
+        list.sort(<)
+        
+        return list
+    }
+    
+    var tips: [Int:Bool]
+    
+    var tipsList: [Int] {
+        var list: [Int] = []
+        for tipName in tips.keys {
+            list.append(tipName)
+        }
+        
+        list.sort(<)
+        
+        return list
+    }
     
     init() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
-//        if let speciesInfo = userDefaults.valueForKey("species") as? [String:[String]] {
-//            species = speciesInfo
-//        } else {
-//            // add default data
-//            species = [
-//                "Birds": ["Swift"],
-//                "Cats" : ["Persian Cat"],
-//                "Dogs" : ["Labrador Retriever"]
-//            ]
-//        }
+        
+        // set up tip percentages
+        if let tipInfo = userDefaults.valueForKey("tips") as? [Int:Bool] {
+            tips = tipInfo
+        } else {
+            // add default data
+            
+            tips = [Int:Bool]()
+            for tip in 5...30 {
+                switch tip {
+                case 15:
+                    tips[tip] = true
+                case 20:
+                    tips[tip] = true
+                case 25:
+                    tips[tip] = true
+                default:
+                    tips[tip] = false
+                }
+            }
+        }
+        
+        // set up themes
+        if let themeInfo = userDefaults.valueForKey("themes") as? [String:Bool] {
+            themes = themeInfo
+        } else {
+            // add default data
+            themes = [
+                "Light": true,
+                "Dark" : false,
+            ]
+        }
     }
     
     func saveData() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
-//        userDefaults.setValue(species, forKey: "species")
+        userDefaults.setValue(themes, forKey: "themes")
+    }
+    
+    func isThemeSelected(themeName: String) -> Bool {
+        if let selected = themes[themeName] as Bool? {
+            return selected
+        } else {
+            return false
+        }
+    }
+    
+    func selectTheme(selectedThemeName: String) {
+        for themeName in themes.keys {
+            themes[themeName] = themeName == selectedThemeName
+        }
+        
+        saveData()
     }
     
 //    func addRace(species inSpecies: String, race: String) {
