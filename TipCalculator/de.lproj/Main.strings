@@ -1,13 +1,22 @@
-/* Class = "UILabel"; text = "Settings"; ObjectID = "1Oo-gP-vwa"; */
+/* (No Commment) */
 "1Oo-gP-vwa.text" = "Einstellungen";
 
-/* Class = "UISegmentedControl"; 4rk-XE-1M6.segmentTitles[0] = "15%"; ObjectID = "4rk-XE-1M6"; */
+/* Class = "UILabel"; text = "Light"; ObjectID = "1tD-GM-VKJ"; */
+"1tD-GM-VKJ.text" = "Hell";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "3Bk-QS-vNm"; */
+"3Bk-QS-vNm.title" = "Einstellungen";
+
+/* Class = "UILabel"; text = "20%"; ObjectID = "4he-u7-INj"; */
+"4he-u7-INj.text" = "20%";
+
+/* (No Commment) */
 "4rk-XE-1M6.segmentTitles[0]" = "15%";
 
-/* Class = "UISegmentedControl"; 4rk-XE-1M6.segmentTitles[1] = "20%"; ObjectID = "4rk-XE-1M6"; */
+/* (No Commment) */
 "4rk-XE-1M6.segmentTitles[1]" = "20%";
 
-/* Class = "UISegmentedControl"; 4rk-XE-1M6.segmentTitles[2] = "25%"; ObjectID = "4rk-XE-1M6"; */
+/* (No Commment) */
 "4rk-XE-1M6.segmentTitles[2]" = "25%";
 
 /* Class = "UISegmentedControl"; 5ul-Ln-uOe.segmentTitles[0] = "15%"; ObjectID = "5ul-Ln-uOe"; */
@@ -19,33 +28,69 @@
 /* Class = "UISegmentedControl"; 5ul-Ln-uOe.segmentTitles[2] = "25%"; ObjectID = "5ul-Ln-uOe"; */
 "5ul-Ln-uOe.segmentTitles[2]" = "25%";
 
-/* Class = "UIBarButtonItem"; title = "Settings"; ObjectID = "8sx-X8-2yf"; */
+/* (No Commment) */
 "8sx-X8-2yf.title" = "Einstellungen";
 
-/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "AKq-cT-DBc"; */
+/* Class = "UILabel"; text = "/ 1"; ObjectID = "9In-Wm-G2e"; */
+"9In-Wm-G2e.text" = "/ 1";
+
+/* (No Commment) */
 "AKq-cT-DBc.normalTitle" = "Erledigt";
 
 /* Class = "UINavigationItem"; title = "Tip Calculator"; ObjectID = "EpD-rD-K37"; */
 "EpD-rD-K37.title" = "Trinkgeld Rechner";
 
+/* Class = "UITableViewSection"; headerTitle = "Functional"; ObjectID = "HiA-UR-lWS"; */
+"HiA-UR-lWS.headerTitle" = "Funktional";
+
+/* Class = "UINavigationItem"; title = "Tip Percentage"; ObjectID = "Mxj-t1-Frw"; */
+"Mxj-t1-Frw.title" = "Trinkgeld Prozentsatz";
+
 /* Class = "UILabel"; text = "Total"; ObjectID = "Ove-PI-Bdo"; */
 "Ove-PI-Bdo.text" = "Gesamt";
 
-/* Class = "UILabel"; text = "Default Tip Percentage"; ObjectID = "Q4j-I9-7kW"; */
+/* (No Commment) */
 "Q4j-I9-7kW.text" = "Default Trinkgeld Prozentsatz";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "QsN-kX-i1g"; */
+"QsN-kX-i1g.title" = "Zurück";
+
+/* Class = "UINavigationItem"; title = "Theme"; ObjectID = "UCf-MT-F4P"; */
+"UCf-MT-F4P.title" = "Thema";
+
+/* Class = "UILabel"; text = "Tip Percentage"; ObjectID = "ehm-cY-bCJ"; */
+"ehm-cY-bCJ.text" = "Trinkgeld Prozentsatz";
+
+/* Class = "UILabel"; text = "Theme"; ObjectID = "evd-I0-hAK"; */
+"evd-I0-hAK.text" = "Thema";
+
+/* Class = "UITextField"; placeholder = "$"; ObjectID = "gr0-ch-uTC"; */
+"gr0-ch-uTC.placeholder" = "€";
+
+/* Class = "UILabel"; text = "20%"; ObjectID = "h6q-BG-xK0"; */
+"h6q-BG-xK0.text" = "20%";
 
 /* Class = "UILabel"; text = "$100.00"; ObjectID = "m2e-f1-L81"; */
 "m2e-f1-L81.text" = "€100.00";
 
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "nld-c1-M3S"; */
+"nld-c1-M3S.title" = "Zurück";
+
 /* Class = "UILabel"; text = "Tip"; ObjectID = "qpD-jY-cvU"; */
 "qpD-jY-cvU.text" = "Trinkgeld";
 
-/* Class = "UILabel"; text = "Bill Amount"; ObjectID = "trP-ED-lyz"; */
-"trP-ED-lyz.text" = "Rechnung";
+/* (No Commment) */
+"trP-ED-lyz.text" = "Rechnung Betrag";
 
 /* Class = "UILabel"; text = "$10.00"; ObjectID = "u9L-pS-lPk"; */
 "u9L-pS-lPk.text" = "€10.00";
 
-/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "vb8-9A-w4D"; */
+/* (No Commment) */
 "vb8-9A-w4D.normalTitle" = "Stornieren";
+
+/* Class = "UILabel"; text = "Light"; ObjectID = "wKm-7N-KX9"; */
+"wKm-7N-KX9.text" = "Hell";
+
+/* Class = "UITableViewSection"; headerTitle = "Appearance"; ObjectID = "z1a-PM-xj3"; */
+"z1a-PM-xj3.headerTitle" = "Aussehen";
 
