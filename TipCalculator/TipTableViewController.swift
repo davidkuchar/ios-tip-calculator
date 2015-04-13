@@ -10,7 +10,7 @@ import UIKit
 
 class TipTableViewController: UITableViewController {
     
-    var tips: [Int] = DataManager.sharedInstance.tipsList
+    var tips: [String] = DataManager.sharedInstance.tipsList
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +38,11 @@ class TipTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("tipCell", forIndexPath: indexPath) as! UITableViewCell
         
-        var tipValue = self.tips[indexPath.row]
+        var tipName = self.tips[indexPath.row]
         
-        cell.textLabel?.text = String(tipValue)
+        cell.textLabel?.text = String(tipName)
         
-        if DataManager.sharedInstance.isTipSelected(tipValue) {
+        if DataManager.sharedInstance.isTipSelected(tipName) {
             cell.accessoryType = .Checkmark
         } else {
             cell.accessoryType = .None
@@ -52,11 +52,11 @@ class TipTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var tipValue = self.tips[indexPath.row]
+        var tipName = self.tips[indexPath.row]
         
-        println("You selected cell #\(tipValue)!")
+        println("You selected cell #\(tipName)!")
         
-        DataManager.sharedInstance.selectTip(tipValue)
+        DataManager.sharedInstance.selectTip(tipName)
         
         self.tableView.reloadData()
     }

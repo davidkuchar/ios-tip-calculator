@@ -35,10 +35,10 @@ class DataManager {
         return list
     }
     
-    var tips: [Int:Bool]
+    var tips: [String:Bool]
     
-    var tipsList: [Int] {
-        var list: [Int] = []
+    var tipsList: [String] {
+        var list: [String] = []
         for tipName in tips.keys {
             list.append(tipName)
         }
@@ -52,25 +52,28 @@ class DataManager {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
         // set up tip percentages
-        if let tipInfo = userDefaults.valueForKey("tips") as? [Int:Bool] {
+        if let tipInfo = userDefaults.valueForKey("tips") as? [String:Bool] {
             tips = tipInfo
             println("defaults!!")
         } else {
             // add default data
             
-            tips = [Int:Bool]()
-            for tip in 5...30 {
-                switch tip {
-                case 15:
-                    tips[tip] = true
-                case 20:
-                    tips[tip] = true
-                case 25:
-                    tips[tip] = true
-                default:
-                    tips[tip] = false
-                }
-            }
+            tips = [String:Bool]()
+//            for tip in 5...30 {
+//                switch tip {
+//                case 15:
+//                    tips[tip] = true
+//                case 20:
+//                    tips[tip] = true
+//                case 25:
+//                    tips[tip] = true
+//                default:
+//                    tips[tip] = false
+//                }
+//            }
+            tips["15%"] = false
+            tips["20%"] = true
+            tips["25%"] = false
         }
         
         // set up themes
@@ -91,17 +94,17 @@ class DataManager {
         userDefaults.setValue(themes, forKey: "themes")
     }
     
-    func isTipSelected(tipValue: Int) -> Bool {
-        if let selected = tips[tipValue] as Bool? {
+    func isTipSelected(tipName: String) -> Bool {
+        if let selected = tips[tipName] as Bool? {
             return selected
         } else {
             return false
         }
     }
     
-    func selectTip(selectedTipValue: Int) {
-        for tipValue in tips.keys {
-            tips[tipValue] = tipValue == selectedTipValue
+    func selectTip(selectedTipName: String) {
+        for tipName in tips.keys {
+            tips[tipName] = tipName == selectedTipName
         }
         
         saveData()
