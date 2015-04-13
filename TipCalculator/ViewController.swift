@@ -9,18 +9,17 @@
 
 //TODO:
 
-//1. Remember the bill amount across app restarts. After an extended period of time, clear the state. This is a UI trick that Apple uses with the Spotlight app. If you return there a minute later, it will show your most recent search. if you return 10 minutes later, it defaults to blank. To implement this, plug into the application lifecycle and track time using NSDate.
+//1. Add theming
 
-//2. Use locale specific currency and currency thousands separators.
+//2. Improve design
 
-//3. Add a light/dark color theme to the settings view. In viewWillAppear, update views with the correct theme colors.
-
-//4. Improve design
+//3. Update Language/translations
 
 import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var viewBackground: UIView!
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipLabel: UILabel!
@@ -66,6 +65,9 @@ class ViewController: UIViewController {
         tipControl.selectedSegmentIndex = find(tipOptions, defaultTipName)!
         
         updateTotal()
+        
+        
+        applyTheme()
         
 //        println("view will appear")
     }
@@ -119,5 +121,31 @@ class ViewController: UIViewController {
         
         tipLabel.text = formatter.stringFromNumber(tip)
         totalLabel.text = formatter.stringFromNumber(total)
+    }
+    
+    func applyTheme() {
+        
+        let theme = DataManager.sharedInstance.getSelectedTheme()
+        
+        switch theme {
+        case "Dark":
+        
+            viewBackground.tintColor = UIColor.redColor()
+            
+            tipLabel.textColor = UIColor.redColor()
+            tipLabel.shadowColor = UIColor.blackColor()
+            tipLabel.font = UIFont(name: "HelveticaNeue", size: CGFloat(22))
+
+        default: //case "Light":
+            
+            viewBackground.tintColor = UIColor.blueColor()
+//            
+//            tipLabel.textColor = UIColor.redColor()
+//            tipLabel.shadowColor = UIColor.blackColor()
+//            tipLabel.font = UIFont(name: "HelveticaNeue", size: CGFloat(22))
+        }
+        
+        
+        
     }
 }

@@ -84,6 +84,7 @@
                         <outlet property="tipControl" destination="5ul-Ln-uOe" id="OlN-8v-Ogz"/>
                         <outlet property="tipLabel" destination="u9L-pS-lPk" id="QNB-Vh-epL"/>
                         <outlet property="totalLabel" destination="m2e-f1-L81" id="UsH-5L-U8c"/>
+                        <outlet property="viewBackground" destination="8bC-Xf-vdC" id="WHg-Ie-T03"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -104,14 +105,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Tip Percentage" id="HiA-UR-lWS">
+                            <tableViewSection headerTitle="Functional" id="HiA-UR-lWS">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ehm-cY-bCJ" detailTextLabel="h6q-BG-xK0" style="IBUITableViewCellStyleValue1" id="Q0Q-3I-ctZ">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q0Q-3I-ctZ" id="yb5-IM-Xtm">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Default" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ehm-cY-bCJ">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Tip Percentage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ehm-cY-bCJ">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
