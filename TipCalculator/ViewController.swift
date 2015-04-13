@@ -23,13 +23,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipLabel: UILabel!
+    @IBOutlet weak var tipTextLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var totalTextLabel: UILabel!
     @IBOutlet weak var tipAmount: UISegmentedControl!
+    @IBOutlet weak var splitLabel: UILabel!
+    @IBOutlet weak var splitSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
+        
+        var formatter = NSNumberFormatter()
+        formatter.numberStyle = .CurrencyStyle
+        formatter.locale = NSLocale.currentLocale()
+        billField.placeholder = formatter.currencySymbol
         
         // load stored bill amount
         
@@ -65,7 +74,6 @@ class ViewController: UIViewController {
         tipControl.selectedSegmentIndex = find(tipOptions, defaultTipName)!
         
         updateTotal()
-        
         
         applyTheme()
         
@@ -105,17 +113,33 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
+    @IBAction func sliderValueChanged(sender: UISlider) {
+        var sliderIntValue = Int(sender.value)
+        var snapToValue = Float(sliderIntValue)
+        if (sender.value - snapToValue) >= 0.5 {
+            snapToValue++
+        }
+        
+        sender.setValue(snapToValue, animated: false)
+        
+        splitLabel.text = "/ \(Int(snapToValue))"
+        
+        updateTotal()
+    }
+    
     func updateTotal() {
         var tipPercentages = [0.15, 0.2, 0.25]
         var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
         var billAmount = (billField.text as NSString).doubleValue
         var tip = billAmount * tipPercentage
-        var total = billAmount + tip
+        var split = Double(splitSlider.value)
+        var total = (billAmount + tip) / split
         
         var formatter = NSNumberFormatter()
         formatter.numberStyle = .CurrencyStyle
         formatter.locale = NSLocale.currentLocale()
+        
 //        formatter.locale = NSLocale(localeIdentifier: "es_CL")
 //        formatter.locale = NSLocale(localeIdentifier: "es_ES")
         
@@ -127,25 +151,51 @@ class ViewController: UIViewController {
         
         let theme = DataManager.sharedInstance.getSelectedTheme()
         
+        let colorSwatch: [UIColor] = [
+            UIColor(red: 40/255, green: 50/255, blue: 45/255, alpha: 1.0),
+            UIColor(red: 80/255, green: 98/255, blue: 89/255, alpha: 1.0),
+            UIColor(red: 159/255, green: 195/255, blue: 176/255, alpha: 1.0),
+            UIColor(red: 169/255, green: 208/255, blue: 188/255, alpha: 1.0),
+            UIColor(red: 161/255, green: 198/255, blue: 178/255, alpha: 1.0)
+        ]
+        
+        billField.font = UIFont(name: "HelveticaNeue", size: CGFloat(70))
+        tipTextLabel.font = UIFont(name: "HelveticaNeue", size: CGFloat(17))
+        tipLabel.font = UIFont(name: "HelveticaNeue", size: CGFloat(22))
+        totalTextLabel.font = UIFont(name: "HelveticaNeue", size: CGFloat(22))
+        totalLabel.font = UIFont(name: "HelveticaNeue", size: CGFloat(30))
+        splitLabel.font = UIFont(name: "HelveticaNeue", size: CGFloat(22))
+        
         switch theme {
         case "Dark":
         
-            viewBackground.tintColor = UIColor.redColor()
+            view.backgroundColor = colorSwatch[0]
+            view.tintColor = colorSwatch[3]
             
-            tipLabel.textColor = UIColor.redColor()
-            tipLabel.shadowColor = UIColor.blackColor()
-            tipLabel.font = UIFont(name: "HelveticaNeue", size: CGFloat(22))
+            billField.textColor = colorSwatch[3]
+            tipTextLabel.textColor = colorSwatch[3]
+            tipLabel.textColor = colorSwatch[3]
+            totalTextLabel.textColor = colorSwatch[3]
+            totalLabel.textColor = colorSwatch[3]
+            tipAmount.tintColor = colorSwatch[3]
+            tipControl.tintColor = colorSwatch[3]
+            splitLabel.textColor = colorSwatch[3]
+            splitSlider.tintColor = colorSwatch[3]
 
         default: //case "Light":
             
-            viewBackground.tintColor = UIColor.blueColor()
-//            
-//            tipLabel.textColor = UIColor.redColor()
-//            tipLabel.shadowColor = UIColor.blackColor()
-//            tipLabel.font = UIFont(name: "HelveticaNeue", size: CGFloat(22))
+            view.backgroundColor = colorSwatch[3]
+            view.tintColor = colorSwatch[0]
+            
+            billField.textColor = colorSwatch[0]
+            tipTextLabel.textColor = colorSwatch[0]
+            tipLabel.textColor = colorSwatch[0]
+            totalTextLabel.textColor = colorSwatch[0]
+            totalLabel.textColor = colorSwatch[0]
+            tipAmount.tintColor = colorSwatch[0]
+            tipControl.tintColor = colorSwatch[0]
+            splitLabel.textColor = colorSwatch[0]
+            splitSlider.tintColor = colorSwatch[0]
         }
-        
-        
-        
     }
 }

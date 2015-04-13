@@ -13,6 +13,8 @@
 		552BBC791AD8A33700E32355 /* ThemeSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BBC781AD8A33700E32355 /* ThemeSettingsTableViewController.swift */; };
 		552BBC7B1ADA021100E32355 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BBC7A1ADA021100E32355 /* DataManager.swift */; };
 		552BBC7D1ADA229400E32355 /* TipTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BBC7C1ADA229400E32355 /* TipTableViewController.swift */; };
+		552BBC801ADB9C8200E32355 /* Settings Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 552BBC7F1ADB9C8200E32355 /* Settings Filled-50.png */; };
+		552BBC831ADB9D1C00E32355 /* Settings Filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 552BBC821ADB9D1C00E32355 /* Settings Filled-25.png */; };
 		556718081AC0A4E7002FDD4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556718071AC0A4E7002FDD4A /* AppDelegate.swift */; };
 		5567180A1AC0A4E7002FDD4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556718091AC0A4E7002FDD4A /* ViewController.swift */; };
 		5567180D1AC0A4E7002FDD4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5567180B1AC0A4E7002FDD4A /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 		552BBC781AD8A33700E32355 /* ThemeSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSettingsTableViewController.swift; sourceTree = "<group>"; };
 		552BBC7A1ADA021100E32355 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		552BBC7C1ADA229400E32355 /* TipTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipTableViewController.swift; sourceTree = "<group>"; };
+		552BBC7F1ADB9C8200E32355 /* Settings Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings Filled-50.png"; sourceTree = "<group>"; };
+		552BBC821ADB9D1C00E32355 /* Settings Filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings Filled-25.png"; sourceTree = "<group>"; };
 		556718021AC0A4E7002FDD4A /* TipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		556718061AC0A4E7002FDD4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		556718071AC0A4E7002FDD4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +75,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		552BBC7E1ADB9C6300E32355 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				552BBC811ADB9CCF00E32355 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		552BBC811ADB9CCF00E32355 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				552BBC7F1ADB9C8200E32355 /* Settings Filled-50.png */,
+				552BBC821ADB9D1C00E32355 /* Settings Filled-25.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		556717F91AC0A4E7002FDD4A = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +113,7 @@
 		556718041AC0A4E7002FDD4A /* TipCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				552BBC7E1ADB9C6300E32355 /* Resources */,
 				556718271AC51360002FDD4A /* ViewControllers */,
 				556718071AC0A4E7002FDD4A /* AppDelegate.swift */,
 				5567180B1AC0A4E7002FDD4A /* Main.storyboard */,
@@ -222,10 +244,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				552BBC831ADB9D1C00E32355 /* Settings Filled-25.png in Resources */,
 				5567180D1AC0A4E7002FDD4A /* Main.storyboard in Resources */,
 				552BBC731AD75CAE00E32355 /* InfoPlist.strings in Resources */,
 				556718121AC0A4E7002FDD4A /* LaunchScreen.xib in Resources */,
 				5567180F1AC0A4E7002FDD4A /* Images.xcassets in Resources */,
+				552BBC801ADB9C8200E32355 /* Settings Filled-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
