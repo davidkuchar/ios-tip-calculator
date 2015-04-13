@@ -6,15 +6,6 @@
 //  Copyright (c) 2015 David Kuchar. All rights reserved.
 //
 
-
-//TODO:
-
-//1. Add theming
-
-//2. Improve design
-
-//3. Update Language/translations
-
 import UIKit
 
 class ViewController: UIViewController {

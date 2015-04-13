@@ -56,7 +56,6 @@ class DataManager {
         // set up tip percentages
         if let tipInfo = userDefaults.valueForKey("tips") as? [String:Bool] {
             tips = tipInfo
-            println("defaults!!")
         } else {
             // add default data
             
@@ -168,8 +167,9 @@ class DataManager {
         
         // only load stored bill amounts that are younger than ten minutes old
         
-        if timeSinceLastChanged < 600 {
-            let billAmountValue = billAmount["value"] as! Double
+        let billAmountValue = billAmount["value"] as! Double
+        
+        if billAmountValue > 0 && timeSinceLastChanged < 600 {
             
             println(String(format: "Stored Bill Amount: $%.2f", billAmountValue))
             
