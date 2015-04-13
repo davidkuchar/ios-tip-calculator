@@ -90,7 +90,7 @@ class DataManager {
         }
         
         // set up billAmount
-        if let billAmountInfo = userDefaults.valueForKey("billAmount") as? [String:Bool] {
+        if let billAmountInfo = userDefaults.objectForKey("billAmount") as? [String:AnyObject] {
             billAmount = billAmountInfo
         } else {
             // add default data
@@ -103,6 +103,7 @@ class DataManager {
     
     func saveData() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
+        
         userDefaults.setValue(tips, forKey: "tips")
         userDefaults.setValue(themes, forKey: "themes")
         userDefaults.setValue(billAmount, forKey: "billAmount")
@@ -116,7 +117,7 @@ class DataManager {
         }
         return "20%"
     }
-        
+    
     func isTipSelected(tipName: String) -> Bool {
         if let selected = tips[tipName] as Bool? {
             return selected
@@ -156,6 +157,26 @@ class DataManager {
         }
         
         saveData()
+    }
+    
+    func getBillAmount() -> Double? {
+        // load timestamp from last time bill amount was changed
+        
+        let timeSinceLastChanged = NSDate().timeIntervalSinceDate(billAmount["timestamp"] as! NSDate)
+        
+        println(String(format: "Time Since Last Changed: %.0f seconds", timeSinceLastChanged))
+        
+        // only load stored bill amounts that are younger than ten minutes old
+        
+        if timeSinceLastChanged < 600 {
+            let billAmountValue = billAmount["value"] as! Double
+            
+            println(String(format: "Stored Bill Amount: $%.2f", billAmountValue))
+            
+            return billAmountValue
+        } else {
+            return nil
+        }
     }
     
     func setBillAmount(newBillAmount: Double) {

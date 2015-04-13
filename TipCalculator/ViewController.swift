@@ -32,28 +32,11 @@ class ViewController: UIViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
         
-        var defaults = NSUserDefaults.standardUserDefaults()
+        // load stored bill amount
         
-        
-        
-        // load timestamp from last time bill amount was changed
-        
-        if let billAmount = defaults.objectForKey("billAmount") as? [String:AnyObject] {
-            
-            let timeSinceLastChanged = NSDate().timeIntervalSinceDate(billAmount["timestamp"] as! NSDate)
-            
-            println(String(format: "Time Since Last Changed: %.0f seconds", timeSinceLastChanged))
-            
-            // only load stored bill amounts that are younger than ten minutes old
-            
-            if timeSinceLastChanged < 600 {
-                billField.text = (billAmount["value"] as! Double).description
-                
-                println(String(format: "Stored Bill Amount: $%.2f", billAmount["value"] as! Double))
-            }
+        if let billAmount = DataManager.sharedInstance.getBillAmount() {
+            billField.text = billAmount.description
         }
-        
-        updateTotal()
         
 //        // Optionally initialize the property to a desired starting value
 //        self.firstView.alpha = 0
