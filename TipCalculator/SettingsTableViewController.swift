@@ -10,17 +10,18 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
 
+    @IBOutlet weak var defaultTip: UILabel!
+    @IBOutlet weak var currentTheme: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        
-//        var defaults = NSUserDefaults.standardUserDefaults()
-//        defaultTipPercentage.selectedSegmentIndex = defaults.integerForKey("defaultTipPercentageIndex")
-//
-//        var defaults = NSUserDefaults.standardUserDefaults()
-//        defaults.setInteger(defaultTipPercentage.selectedSegmentIndex, forKey: "defaultTipPercentageIndex")
-//        defaults.setBool(true, forKey: "settingsUpdated")
-//        defaults.synchronize()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+                
+        defaultTip.text = DataManager.sharedInstance.getSelectedTip()
+        currentTheme.text = DataManager.sharedInstance.getSelectedTheme()
     }
 
     override func didReceiveMemoryWarning() {

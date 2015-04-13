@@ -48,6 +48,8 @@ class DataManager {
         return list
     }
     
+    var billAmount: [String:AnyObject]
+    
     init() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
@@ -86,14 +88,35 @@ class DataManager {
                 "Dark" : false,
             ]
         }
+        
+        // set up billAmount
+        if let billAmountInfo = userDefaults.valueForKey("billAmount") as? [String:Bool] {
+            billAmount = billAmountInfo
+        } else {
+            // add default data
+            billAmount = [
+                "value": 0,
+                "timestamp": NSDate()
+            ]
+        }
     }
     
     func saveData() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         userDefaults.setValue(tips, forKey: "tips")
         userDefaults.setValue(themes, forKey: "themes")
+        userDefaults.setValue(billAmount, forKey: "billAmount")
     }
     
+    func getSelectedTip() -> String {
+        for (tipName, selected) in tips {
+            if selected {
+                return tipName
+            }
+        }
+        return "20%"
+    }
+        
     func isTipSelected(tipName: String) -> Bool {
         if let selected = tips[tipName] as Bool? {
             return selected
@@ -110,6 +133,15 @@ class DataManager {
         saveData()
     }
     
+    func getSelectedTheme() -> String {
+        for (themeName, selected) in themes {
+            if selected {
+                return themeName
+            }
+        }
+        return "Light"
+    }
+    
     func isThemeSelected(themeName: String) -> Bool {
         if let selected = themes[themeName] as Bool? {
             return selected
@@ -122,6 +154,15 @@ class DataManager {
         for themeName in themes.keys {
             themes[themeName] = themeName == selectedThemeName
         }
+        
+        saveData()
+    }
+    
+    func setBillAmount(newBillAmount: Double) {
+        billAmount = [
+            "value": newBillAmount,
+            "timestamp": NSDate()
+        ]
         
         saveData()
     }

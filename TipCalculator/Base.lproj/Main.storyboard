@@ -167,6 +167,10 @@
                     <navigationItem key="navigationItem" title="Settings" id="3Bk-QS-vNm">
                         <barButtonItem key="backBarButtonItem" title="Back" id="QsN-kX-i1g"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="currentTheme" destination="wKm-7N-KX9" id="NMB-Pb-uax"/>
+                        <outlet property="defaultTip" destination="h6q-BG-xK0" id="rYI-LY-Y1x"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxa-bw-MKQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

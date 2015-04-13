@@ -34,9 +34,7 @@ class ViewController: UIViewController {
         
         var defaults = NSUserDefaults.standardUserDefaults()
         
-        // load default tip percentage from settings
         
-        tipControl.selectedSegmentIndex = defaults.integerForKey("defaultTipPercentageIndex")
         
         // load timestamp from last time bill amount was changed
         
@@ -72,14 +70,19 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        var defaults = NSUserDefaults.standardUserDefaults()
-        if defaults.boolForKey("settingsUpdated") {
-            tipControl.selectedSegmentIndex = defaults.integerForKey("defaultTipPercentageIndex")
-            defaults.setBool(false, forKey: "settingsUpdated")
-            defaults.synchronize()
-            
-            updateTotal()
-        }
+        // load default tip percentage from settings
+        
+        let defaultTipName = DataManager.sharedInstance.getSelectedTip()
+        
+        let tipOptions = [
+            "15%",
+            "20%",
+            "25%"
+        ]
+        
+        tipControl.selectedSegmentIndex = find(tipOptions, defaultTipName)!
+        
+        updateTotal()
         
 //        println("view will appear")
     }
@@ -107,16 +110,8 @@ class ViewController: UIViewController {
     @IBAction func onEditingChanged(sender: AnyObject) {
 //        println("User editing bill" + billField.text)
         
-        var defaults = NSUserDefaults.standardUserDefaults()
-        
-        // store current bill amount with a timestamp
-        let billAmount:[String:AnyObject] = [
-            "value": (billField.text as NSString).doubleValue,
-            "timestamp": NSDate()
-        ]
-        defaults.setObject(billAmount, forKey: "billAmount")
-        
-        defaults.synchronize()
+        let billAmount = (billField.text as NSString).doubleValue
+        DataManager.sharedInstance.setBillAmount(billAmount)
         
         updateTotal()
     }
