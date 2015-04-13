@@ -7,7 +7,7 @@ translated the app to German - I kept some of the design wordy so I could
 better show that off. I built the settings page first in the suggested
 way (with a Modal), and then fully rebuilt it when I redesigned the app.
 
-Time spent: 12 hours spent in total
+Time spent: 9 hours
 
 Completed user stories:
 
