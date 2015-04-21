@@ -21,11 +21,14 @@ Time spent: 16 hours
 This app requires that you install Cocoapods. To do that:
 
 1. Run
-  sudo gem install cocoapods
+
+        sudo gem install cocoapods
 2. Run
-  pod install
+
+        pod install
 3. Run
-  open TipCalculator.xcworkspace
+
+        open TipCalculator.xcworkspace
 
 This app is optimized for iOS 8.2 & iPhone 5.
 
