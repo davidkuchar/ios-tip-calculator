@@ -16,7 +16,7 @@ and a license.
 
 Time spent: 16 hours
 
-## Installation Instructions:
+## Installation Instructions
 
 This app requires that you install Cocoapods. To do that:
 
@@ -29,7 +29,7 @@ This app requires that you install Cocoapods. To do that:
 
 This app is optimized for iOS 8.2 & iPhone 5.
 
-## Completed user stories:
+## Completed user stories
 
  * [x] Required: User can enter a bill amount and see the tip and total amount of the bill
  * [x] Required: User can adjust the tip percentage
@@ -40,7 +40,7 @@ This app is optimized for iOS 8.2 & iPhone 5.
  * [x] Additional: German translation
  * [x] Additional: User can split the bill up to ten ways using a slider (slider snaps to integer values)
 
-## Walkthrough of all user stories:
+## Walkthrough of all user stories
 
 ![Video Walkthrough](TipCalculator.gif)
 
