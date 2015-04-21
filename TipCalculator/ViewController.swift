@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ViewController: UIViewController {
 
@@ -47,6 +48,13 @@ class ViewController: UIViewController {
 //        })
         
 //        println("view did load")
+        
+        
+        let testObject = PFObject(className: "TestObject")
+        testObject["foo"] = "bar"
+        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            println("Object has been saved.")
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
