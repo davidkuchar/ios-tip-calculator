@@ -10,9 +10,9 @@ way (with a Modal), and then fully rebuilt it when I redesigned the app.
 *NEW*
 
 Added the use of Cocoapods for managing dependencies, and added some hello-world
-level Parse support. Looked into Alamofire. Reviewed a few apple-released swift
-videos and read about swift code styling as advised. Added installation instructions
-and a license.
+level Parse support. Looked into Alamofire, and tested code that reads JSON from a
+test REST API. Reviewed a few apple-released swift videos and read about swift
+code styling as advised. Added installation instructions and a license.
 
 Time spent: 16 hours
 
