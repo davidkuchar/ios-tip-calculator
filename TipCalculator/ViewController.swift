@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Alamofire
 
 class ViewController: UIViewController {
 
@@ -54,6 +55,11 @@ class ViewController: UIViewController {
         testObject["foo"] = "bar"
         testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             println("Object has been saved.")
+        }
+        
+        Alamofire.request(.GET, "http://httpbin.org/get")
+            .responseJSON { (_, _, JSON, _) in
+                println(JSON)
         }
     }
     
