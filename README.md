@@ -14,7 +14,7 @@ level Parse support. Looked into Alamofire, and tested code that reads JSON from
 test REST API. Reviewed a few apple-released swift videos and read about swift
 code styling as advised. Added installation instructions and a license.
 
-Time spent: 16 hours
+Time spent: 17 hours
 
 ## Installation Instructions
 
@@ -31,6 +31,12 @@ This app requires that you install Cocoapods. To do that:
         open TipCalculator.xcworkspace
 
 This app is optimized for iOS 8.2 & iPhone 5.
+
+### Dependencies
+
+- https://github.com/Alamofire/Alamofire
+- https://parse.com/
+- https://cocoapods.org/
 
 ## Completed user stories
 
